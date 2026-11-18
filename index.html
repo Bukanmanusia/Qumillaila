@@ -1,0 +1,1815 @@
+<!doctype html>
+<html lang="id" class="[&::-webkit-scrollbar]:hidden">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+      name="viewport"
+    />
+    <meta content="mobile_tab" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/png" href="image/depan.jpeg" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+  </head>
+  <body
+    class="w-screen m-0 p-0 overscroll-none bg-surface dark:bg-[#00170e] font-body-md text-on-surface dark:text-[#e5f5ed] antialiased flex flex-col min-h-screen transition-colors duration-300 [&::-webkit-scrollbar]:hidden [&_*::-webkit-scrollbar]:hidden"
+    id="bodyRoot"
+  >
+    <svg aria-hidden="true" class="absolute w-0 h-0 overflow-hidden"></svg>
+    <!-- TOP NAVIGATION / HEADER -->
+
+    <header
+      class="fixed top-0 w-full z-40 bg-[#daf8f9]/96 backdrop-blur-xl border-b-[2.5px] border-[#111111] pt-[env(safe-area-inset-top,0px)] transition-colors duration-200 dark:bg-[#00170e]/95"
+      id="topHeader"
+    >
+      <div
+        class="h-16 px-gutter-sm flex items-center justify-between gap-space-xs sm:gap-space-sm desktop:h-20 desktop:max-w-7xl desktop:mx-auto desktop:px-10"
+      >
+        <div class="flex items-center gap-2 min-w-0">
+          <div
+            class="w-9 h-9 rounded-lg bg-[#006b58] border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] flex items-center justify-center shrink-0"
+          >
+            <span class="font-headline-sm text-white font-extrabold text-lg"
+              >Q</span
+            >
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span
+              class="font-headline-sm text-xs sm:text-sm uppercase tracking-tight text-[#111111] truncate leading-tight font-extrabold dark:text-[#e8f9f0]"
+              >METODE QUMILLAILA</span
+            ><span
+              class="font-label-sm text-[10px] uppercase text-[#006b58] font-bold tracking-wider truncate dark:text-[#6ee7b7]"
+              >Tahfizh Al-Qur'an 4 Langkah</span
+            >
+          </div>
+        </div>
+        <nav class="hidden desktop:flex items-center gap-7 font-label-sm text-xs uppercase font-bold text-[#111111] dark:text-[#e8f9f0]" aria-label="Navigasi utama">
+          <a class="hover:underline" href="#mainContent">Beranda</a>
+          <a class="hover:underline" href="#order">Pesan Buku</a>
+          <a class="hover:underline" href="#faq">FAQ</a>
+        </nav>
+        <div class="flex items-center gap-1.5 sm:gap-space-xs shrink-0">
+          <!-- NEO-BRUTALIST TACTILE THEME TOGGLE BUTTON --><button
+            aria-label="Toggle Light/Dark Theme"
+            class="h-10 px-2 sm:px-2.5 rounded-lg bg-surface-container-lowest text-[#111111] border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] flex items-center justify-center gap-1.5 font-bold transition-all duration-75 active:translate-x-[2px] active:translate-y-[2px] cursor-pointer hover:bg-secondary-fixed dark:bg-[#05261b] dark:text-emerald-100 dark:border-emerald-600 dark:hover:bg-[#073827]"
+            id="themeToggleBtn"
+            data-action="toggleTheme"
+            title="Ganti Mode Terang / Gelap"
+            type="button"
+          >
+            <span
+              class="material-symbols-outlined text-[20px] text-[#d97706] dark:text-yellow-300 font-bold"
+              id="themeToggleIcon"
+              >light_mode</span
+            ><span
+              class="font-label-sm text-[11px] uppercase tracking-wide hidden xs:inline font-extrabold dark:text-white"
+              id="themeToggleText"
+              >LIGHT</span
+            ></button
+          ><button
+            class="h-10 px-3 sm:px-3.5 rounded-lg bg-secondary-container text-[#111111] font-label-md text-xs uppercase tracking-wider flex items-center justify-center border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] font-bold transition-all duration-75 active:translate-x-[2px] active:translate-y-[2px] cursor-pointer"
+            data-action="openOrderModal"
+            type="button"
+          >
+            Pesan Buku
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main
+      class="flex flex-col relative w-full pt-16 pb-24 bg-[#daf8f9] min-h-screen transition-colors duration-300 dark:bg-[#00170e] [&>:first-child]:mt-0 [&>:last-child]:mb-0 desktop:pt-24 desktop:pb-16 desktop:scroll-mt-24"
+      id="mainContent"
+    >
+      <div class="flex flex-col w-full px-gutter-sm space-y-space-xl desktop:max-w-7xl desktop:mx-auto desktop:px-10 desktop:space-y-12">
+        <!-- HERO SECTION -->
+
+        <section class="flex flex-col pt-space-md desktop:grid desktop:grid-cols-[1fr_0.9fr] desktop:items-center desktop:gap-x-12 desktop:gap-y-2 desktop:pt-10">
+          <!-- Top Pill Badge -->
+
+          <div class="flex flex-col space-y-4 mb-5 desktop:col-start-1 desktop:row-start-1 desktop:space-y-5 desktop:mb-0 desktop:max-w-2xl">
+  <!-- Badge -->
+  <div class="inline-flex items-center gap-space-xs px-space-md py-1.5 bg-tertiary-fixed text-[#111111] rounded-full shadow-[2.5px_2.5px_0px_#111111] self-start border-[2px] border-[#111111]">
+    <span class="text-base leading-none">🔥</span>
+    <span class="font-label-md text-label-md uppercase tracking-wider text-[#111111] font-bold">Metode Tahfizh Revolusioner</span>
+  </div>
+
+  <!-- Main Headline -->
+  <h1 class="font-headline-xl-mobile text-headline-xl-mobile text-[#111111] uppercase tracking-tight leading-[1.12] font-extrabold dark:text-[#e8f9f0] desktop:text-5xl desktop:leading-[1.05]">
+    Cara Mudah Menghafal Al-Qur'an Dengan
+    <span class="bg-secondary-container px-2 py-0.5 inline-block -rotate-1 border-[2.5px] border-[#111111] shadow-[2.5px_2.5px_0px_#111111] text-[#111111]">Metode Qumillaila</span>
+  </h1>
+
+  <!-- Subheadline -->
+  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed dark:text-[#93bbaa]">
+    4 Langkah praktis menghafal dan mengokohkan hafalan Al-Qur'an secara seimbang (<span class="italic font-bold text-[#111111] dark:text-[#e8f9f0]">Az-Ziyadah wal Muraja'ah al Mutawazinah</span>). Terbukti efektif untuk semua kalangan.
+  </p>
+</div>
+
+          <!-- Hero Book Preview Card -->
+
+          <div
+            class="w-full bg-surface-container-lowest rounded-2xl border-[3px] border-[#111111] shadow-[6px_6px_0px_#111111] p-space-md flex flex-col relative overflow-hidden dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857] desktop:col-start-2 desktop:row-start-1 desktop:row-span-3 desktop:p-8"
+          >
+            <!-- Top Badges Row -->
+
+            <div class="flex flex-wrap items-center gap-space-xs mb-space-md">
+
+              <span
+                class="px-space-sm py-1 bg-tertiary-fixed text-[#111111] font-label-sm text-label-sm uppercase rounded-md border-[1.5px] border-[#111111] shadow-[2px_2px_0px_#111111] font-bold"
+              >
+                Buku + Panduan Praktis
+              </span>
+
+              <span
+                class="px-space-sm py-1 bg-surface-container-high text-[#111111] font-label-sm text-label-sm uppercase rounded-md border-[1.5px] border-[#111111] shadow-[2px_2px_0px_#111111] font-bold"
+              >
+                Pelatihan Metode
+              </span>
+            </div>
+
+            <!-- Book Cover Image Display with Neo-Brutalist Pop-Art Framing & Arabesque pattern -->
+
+            <div
+              class="relative w-full rounded-xl bg-[#e4efe9] border-[2.5px] border-[#111111] p-space-md mb-space-md flex justify-center items-center overflow-hidden dark:bg-[#032417]"
+            >
+              <div
+                class="absolute inset-0 opacity-15 bg-[radial-gradient(#111111_1.5px,transparent_1.5px)] bg-[length:14px_14px]"
+              ></div>
+
+              <div
+                class="relative z-10 w-full max-w-[280px] transition-transform duration-200 hover:-rotate-1"
+              >
+                <img
+                  alt="Buku Metode Tahfizh QUMILLAILA - H. Hanafi Nasution, Lc. Al Hafizh"
+                  class="w-full h-auto rounded-lg border-[3px] border-[#111111] shadow-[6px_6px_0px_#111111] object-cover bg-white"
+                  src="image/cover.png"
+                />
+              </div>
+            </div>
+
+            <!-- Feature Pill Badges Under Graphic -->
+
+            <div class="grid grid-cols-1 gap-space-xs mb-space-md justify-center">
+              <div
+                class="bg-surface-bright p-2 rounded-lg border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] flex items-center gap-1.5 dark:bg-[#083324] dark:text-[#e2f4eb] justify-center dark:border-[#065f46]"
+              >
+                <span
+                  class="material-symbols-outlined text-[#047857] text-[18px] justify-center dark:text-[#6ee7b7]"
+                  >verified</span
+                >
+
+                <span
+                  class="font-label-sm text-[11px] uppercase text-[#111111] justify-center font-bold truncate dark:text-[#e8f9f0]"
+                  >Buku Cetak Eksklusif</span
+                >
+              </div>
+            </div>
+
+            <!-- Harga Diskon -->
+            <div class="flex items-center justify-center gap-2 mb-space-sm">
+              <span class="text-sm text-[#777777] line-through font-medium">
+                Rp205.999
+              </span>
+
+              <span
+                class="bg-[#dc2626] text-white text-[10px] font-bold uppercase px-2 py-1 rounded-md"
+              >
+                Diskon
+              </span>
+            </div>
+
+            <!-- Primary CTA button with Neo-Brutalist tactile effect -->
+            <button
+              class="w-full py-space-md px-space-lg rounded-xl bg-secondary-container text-[#111111] border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] font-label-lg text-label-lg uppercase tracking-wider flex items-center justify-center gap-space-xs transition-all duration-75 active:translate-x-[3px] active:translate-y-[3px] active:shadow-none hover:-translate-x-[1px] hover:-translate-y-[1px] cursor-pointer"
+              data-action="openOrderModal"
+              type="button"
+            >
+              <span>Pesan Sekarang — Rp145.909</span>
+
+              <span class="material-symbols-outlined font-extrabold text-[22px]"
+                >arrow_forward</span
+              >
+            </button>
+
+            <p
+              class="font-label-sm text-label-sm uppercase text-center text-on-surface-variant mt-space-sm font-semibold dark:text-[#93bbaa]"
+            >
+              Buku Fisik Siap Kirim ke Seluruh Indonesia
+            </p>
+        </section>
+
+        <!-- ENDORSEMENT DARI PARA TOKOH TERKEMUKA -->
+
+        <section class="flex flex-col">
+          <div class="flex items-center gap-space-xs mb-space-sm">
+            <span
+              class="px-space-sm py-1 bg-secondary-fixed text-[#111111] font-label-md text-label-md uppercase rounded border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] font-bold"
+            >
+              Kata Pengantar &amp; Rekomendasi
+            </span>
+          </div>
+
+          <h2
+            class="font-headline-lg-mobile text-headline-lg-mobile uppercase desktop:text-4xl text-[#111111] tracking-tight leading-tight mb-space-xs font-extrabold dark:text-[#e8f9f0]"
+          >
+            Didukung Tokoh &amp; Ulama Terkemuka
+          </h2>
+
+          <p
+            class="font-body-md text-justify text-body-md text-on-surface-variant mb-space-md dark:text-[#93bbaa]"
+          >
+            Buku karya H. Hanafi Nasution, Lc. Al Hafizh ini disambut hangat dan diberi kata
+            pengantar oleh para ulama, akademisi, dan tokoh nasional:
+          </p>
+
+          <!-- Tokoh List -->
+
+          <div class="grid grid-cols-1 gap-2.5 mb-space-lg desktop:grid-cols-2 desktop:gap-4">
+            <div
+              class="bg-surface-container-lowest p-3 rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] flex items-center gap-3 dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+            >
+              <div
+                class="w-9 h-9 rounded-lg bg-tertiary-fixed border-[1.5px] border-[#111111] flex items-center justify-center font-bold text-sm shrink-0 text-[#111111]"
+              >
+                1
+              </div>
+
+              <div class="min-w-0">
+                <div
+                  class="font-headline-sm text-sm uppercase text-[#111111] font-extrabold leading-tight dark:text-[#e8f9f0]"
+                >
+                  Prof. H. Abdul Somad, Lc., D.E.S.A., Ph.D
+                </div>
+
+                <div
+                  class="font-body-sm text-xs text-[#006b58] font-bold dark:text-[#6ee7b7]"
+                >
+                  Ulama &amp; Da'i Nasional, Internasional (UAS)
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-surface-container-lowest p-3 rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] flex items-center gap-3 dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+            >
+              <div
+                class="w-9 h-9 rounded-lg bg-secondary-container border-[1.5px] border-[#111111] flex items-center justify-center font-bold text-sm shrink-0 text-[#111111]"
+              >
+                2
+              </div>
+
+              <div class="min-w-0">
+                <div
+                  class="font-headline-sm text-sm uppercase text-[#111111] font-extrabold leading-tight dark:text-[#e8f9f0]"
+                >
+                  Brigjen TNI (Purn) Edy Afrizal Natar Nasution, S.I.P.
+                </div>
+
+                <div
+                  class="font-body-sm text-xs text-on-surface-variant font-medium dark:text-[#93bbaa]"
+                >
+                  Gubernur Riau Ke-14 &amp; Tokoh Masyarakat
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-surface-container-lowest p-3 rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] flex items-center gap-3 dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+            >
+              <div
+                class="w-9 h-9 rounded-lg bg-primary-fixed border-[1.5px] border-[#111111] flex items-center justify-center font-bold text-sm shrink-0 text-[#111111]"
+              >
+                3
+              </div>
+
+              <div class="min-w-0">
+                <div
+                  class="font-headline-sm text-sm uppercase text-[#111111] font-extrabold leading-tight dark:text-[#e8f9f0]"
+                >
+                  Assoc. Prof. Dr. Admiral, S.H., M.H.
+                </div>
+
+                <div
+                  class="font-body-sm text-xs text-on-surface-variant font-medium dark:text-[#93bbaa]"
+                >
+                  Rektor Universitas Islam Riau
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-surface-container-lowest p-3 rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] flex items-center gap-3 dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+            >
+              <div
+                class="w-9 h-9 rounded-lg bg-surface-container-high border-[1.5px] border-[#111111] flex items-center justify-center font-bold text-sm shrink-0 text-[#111111]"
+              >
+                4
+              </div>
+
+              <div class="min-w-0">
+                <div
+                  class="font-headline-sm text-sm uppercase text-[#111111] font-extrabold leading-tight dark:text-[#e8f9f0]"
+                >
+                  Dr. H. Saidul Amin, MA
+                </div>
+
+                <div
+                  class="font-body-sm text-xs text-on-surface-variant font-medium dark:text-[#93bbaa]"
+                >
+                  Rektor Universitas Muhammadiyah Riau &amp; Ketua MUI Wilayah Riau
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photos of Dignitary Handover -->
+
+          <div class="flex flex-col gap-space-sm">
+            <div
+              class="font-label-md text-xs uppercase tracking-wider text-[#111111] font-bold dark:text-[#e8f9f0]"
+            >
+              Dokumentasi Penyerahan Buku ke Tokoh:
+            </div>
+
+            <div class="grid grid-cols-2 gap-space-sm desktop:grid-cols-2 desktop:gap-4 wide:grid-cols-4">
+  <!-- Card 1 -->
+  <div class="rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] overflow-hidden bg-white dark:bg-[#05261b] dark:text-[#e2f4eb] dark:border-[#047857] dark:shadow-[4px_4px_0px_#010a06]">
+    <img
+      alt="Penyerahan Buku Qumillaila kepada Tokoh dan Pimpinan"
+      class="w-full h-56 desktop:h-64 object-cover object-[center_30%]"
+      src="image/audiensi.png"
+    />
+    <div class="p-2 bg-surface-container-low border-t-[1.5px] border-[#111111] dark:bg-[#083324] dark:text-[#e2f4eb] dark:border-[#065f46]">
+      <p class="font-label-sm text-[10px] uppercase font-bold text-[#111111] leading-tight dark:text-[#e8f9f0]">
+        Audiensi Resmi &amp; Penyerahan Buku ke Perguruan Tinggi
+      </p>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] overflow-hidden bg-white dark:bg-[#05261b] dark:text-[#e2f4eb] dark:border-[#047857] dark:shadow-[4px_4px_0px_#010a06]">
+    <img
+      alt="Penyerahan Buku Qumillaila kepada Tamu Kehormatan"
+      class="w-full h-56 desktop:h-64 object-cover object-[center_25%]"
+      src="image/uas.png"
+    />
+    <div class="p-2 bg-surface-container-low border-t-[1.5px] border-[#111111] dark:bg-[#083324] dark:text-[#e2f4eb] dark:border-[#065f46]">
+      <p class="font-label-sm text-[10px] uppercase font-bold text-[#111111] leading-tight dark:text-[#e8f9f0]">
+        Apresiasi Ulama
+      </p>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] overflow-hidden bg-white dark:bg-[#05261b] dark:text-[#e2f4eb] dark:border-[#047857] dark:shadow-[4px_4px_0px_#010a06]">
+    <img
+      alt="Penyerahan Buku di Acara Open Day Sekolah Islam"
+      class="w-full h-56 desktop:h-64 object-cover object-center"
+      src="image/apresiasi.png"
+    />
+    <div class="p-2 bg-surface-container-low border-t-[1.5px] border-[#111111] dark:bg-[#083324] dark:text-[#e2f4eb] dark:border-[#065f46]">
+      <p class="font-label-sm text-[10px] uppercase font-bold text-[#111111] leading-tight dark:text-[#e8f9f0]">
+        Penyerahan Buku Kepada Wakil Menteri Agama RI
+      </p>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] overflow-hidden bg-white dark:bg-[#05261b] dark:text-[#e2f4eb] dark:border-[#047857] dark:shadow-[4px_4px_0px_#010a06]">
+    <img
+      alt="Sosialisasi Bersama Tokoh dan Guru Tahfizh"
+      class="w-full h-56 desktop:h-64 object-cover object-center"
+      src="image/silaturahmi.png"
+    />
+    <div class="p-2 bg-surface-container-low border-t-[1.5px] border-[#111111] dark:bg-[#083324] dark:text-[#e2f4eb] dark:border-[#065f46]">
+      <p class="font-label-sm text-[10px] uppercase font-bold text-[#111111] leading-tight dark:text-[#e8f9f0]">
+        Silaturahmi Tokoh Masyarakat
+      </p>
+    </div>
+  </div>
+</div>
+          </div>
+        </section>
+
+        <!-- 4 KEUNGGULAN / 4 LANGKAH UTAMA -->
+
+        <section class="flex flex-col">
+          <!-- Header -->
+
+          <div class="flex items-center gap-space-xs mb-space-sm">
+            <span
+              class="px-space-sm py-1 bg-secondary-container text-[#111111] font-label-md text-label-md uppercase rounded border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] font-bold"
+            >
+              Inti Metode
+            </span>
+          </div>
+
+          <h2
+            class="font-headline-lg-mobile text-headline-lg-mobile uppercase desktop:text-4xl text-[#111111] tracking-tight leading-tight mb-space-md font-extrabold dark:text-[#e8f9f0]"
+          >
+            Metode Tahfizh Qumillaila
+          </h2>
+
+          <!-- Grid Stack -->
+
+          <div class="flex flex-col gap-space-md desktop:grid desktop:grid-cols-2 desktop:gap-6">
+            <!-- Card 1: Sunflower Yellow Stat Card -->
+
+            <div
+              class="w-full bg-secondary-fixed p-space-lg rounded-xl border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] flex flex-col justify-between"
+            >
+              <div class="flex items-start justify-between mb-space-sm">
+                <span
+                  class="font-headline-xl-mobile text-headline-xl-mobile text-[#111111] leading-none font-extrabold tracking-tight"
+                  >01</span
+                >
+                <span
+                  class="material-symbols-outlined text-[30px] text-[#111111]"
+                  >menu_book</span
+                >
+              </div>
+
+              <div>
+                <p class="font-body-md text-justify text-body-md text-[#111111]">
+                  Metode Tahfizh Qumillaila adalah cara mudah dalam menghafal Al Qur'an untuk semua kalangan, hanya dengan 4 langkah insha Allah siapapun bisa dan berhak untuk menghafal Al Qur'an dengan mudah dan baik.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2: White Highlight -->
+
+            <div
+              class="w-full bg-surface-container-lowest p-space-lg rounded-xl border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+            >
+              <div class="flex items-center justify-between mb-space-sm">
+
+                <span
+                  class="font-headline-sm text-headline-sm font-extrabold text-[#111111] dark:text-[#e8f9f0]"
+                  >02</span
+                >
+              </div>
+              <p
+                class="font-body-md text-justify text-body-md text-on-surface leading-normal mb-space-sm dark:text-[#e8f9f0]"
+              >
+                Sebelum buku ini terbit sudah lebih dari 1000 orang yg mengikuti pelatihan metode ini, termasuk para guru tahfizh, pelajar dan umum, serta berbagai lembaga pendidikan yang fokus kepada menghafal Al Qur'an 30 juz. Alhamdulillah dengan metode ini sudah banyak yang terbantu dan berhasil menyelesaikan hafalannya sesuai dengan target waktu dan hafalan yang ditetapkan.
+              </p>
+            </div>
+
+            <!-- Card 3: Mint Card -->
+
+            <div
+              class="w-full bg-tertiary-fixed p-space-lg rounded-xl border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111]"
+            >
+              <div class="flex items-start justify-between mb-space-sm">
+                <span
+                  class="font-headline-xl-mobile text-headline-xl-mobile text-[#111111] leading-none font-extrabold tracking-tight"
+                  >03</span
+                >
+
+                <span
+                  class="material-symbols-outlined text-[30px] text-[#111111]"
+                  >workspace_premium</span
+                >
+              </div>
+
+              <div>
+                <p class="font-body-md text-justify text-body-md text-[#111111]">
+                  Diantara kemudahan tersebut, adanya penyeleksian bacaan, cetakan Qur'an serta pengklasifikasiannya. Didukung dengan adanya strategi dan teknik hafalan yang menyenangkan serta pengulangan yang seimbang dengan waktu yang sangat efesien dan kokoh dalam ingatan.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 4: Light Orange Card -->
+
+            <div
+              class="w-full bg-primary-fixed p-space-lg rounded-xl border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111]"
+            >
+              <div class="flex items-start justify-between mb-space-sm">
+                <span
+                  class="font-headline-xl-mobile text-headline-xl-mobile text-[#111111] leading-none font-extrabold tracking-tight"
+                  >04</span
+                >
+
+                <span
+                  class="material-symbols-outlined text-[30px] text-[#111111]"
+                  >diversity_3</span
+                >
+              </div>
+              <p
+                class="font-body-md text-justify text-body-md text-[#111111] leading-normal"
+              >
+                Untuk mengetahui lebih dalam, insya allah semuanya akan dibahas dalam buku yang sangat simpel, mudah dipahami dengan bahasa yang lebih elegan dan ringkas serta aplikatif.
+              </p>
+            </div>
+
+            <!-- Bonus Box -->
+            <div
+              class="mt-space-md w-full bg-[#FAF6F0] rounded-xl border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] p-space-lg dark:bg-[#05261b] dark:text-[#e2f4eb] dark:border-[#047857] dark:shadow-[4px_4px_0px_#010a06] desktop:col-span-2"
+            >
+              <div class="flex items-center gap-2 mb-space-sm">
+                <span class="text-xl">📚</span>
+                <h4
+                  class="font-headline-sm text-headline-sm uppercase text-[#111111] font-extrabold dark:text-[#e8f9f0]"
+                >
+                  Buku Dilengkapi dengan:
+                </h4>
+              </div>
+
+              <ul
+                class="space-y-space-xs font-body-sm text-body-sm text-[#111111] dark:text-[#e8f9f0]"
+              >
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#006b58] text-[20px] dark:text-[#6ee7b7]">check_circle</span>
+                  <span class="font-medium">Tabel & Form Check Up Tilawah</span>
+                </li>
+
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#006b58] text-[20px] dark:text-[#6ee7b7]">check_circle</span>
+                  <span class="font-medium">Form Target & Waktu Hafalan Harian</span>
+                </li>
+
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#006b58] text-[20px] dark:text-[#6ee7b7]">check_circle</span>
+                  <span class="font-medium">Buku Mutaba'ah Ziyadah Harian</span>
+                </li>
+
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#006b58] text-[20px] dark:text-[#6ee7b7]">check_circle</span>
+                  <span class="font-medium">Rekap Ziyadah & Absensi Bulanan</span>
+                </li>
+
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#006b58] text-[20px] dark:text-[#6ee7b7]">check_circle</span>
+                  <span class="font-medium">Tips Hafalan Al-Qur'an: Metode Naik Turun Tangga</span>
+                </li>
+              </ul>
+            </div>
+        </section>
+
+        <!-- GALERI PELATIHAN & SOSIALISASI METODE (REAL PHOTOS) -->
+
+        <section class="flex flex-col">
+          <div class="flex items-center gap-space-xs mb-space-sm">
+            <span
+              class="px-space-sm py-1 bg-surface-container-high text-[#111111] font-label-md text-label-md uppercase rounded border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] font-bold"
+            >
+              Dokumentasi
+            </span>
+          </div>
+
+          <h2
+            class="font-headline-lg-mobile text-headline-lg-mobile uppercase desktop:text-4xl text-[#111111] tracking-tight leading-tight mb-space-xs font-extrabold dark:text-[#e8f9f0]"
+          >
+            Pelatihan &amp; Sosialisasi Nyata
+          </h2>
+
+          <p
+            class="font-body-md text-body-md text-on-surface-variant mb-space-md text-justify dark:text-[#93bbaa]"
+          >
+            Ratusan peserta telah mengikuti workshop intensif Metode Qumillaila
+            di berbagai hotel, aula, dan lembaga pendidikan.
+          </p>
+
+          <!-- Feature Showcase Banner -->
+
+          <div
+            class="w-full rounded-2xl border-[3px] border-[#111111] shadow-[5px_5px_0px_#111111] overflow-hidden bg-white mb-space-md dark:bg-[#05261b] dark:text-[#e2f4eb] dark:border-[#047857] dark:shadow-[4px_4px_0px_#010a06] desktop:mb-6"
+          >
+            <img
+              alt="Pelatihan 4 Langkah Cara Mudah Menghafal Al-Qur'an di Hotel Khas Pekanbaru"
+              class="w-full h-52 object-cover desktop:h-[460px]"
+              src="image/peserta.png"
+            />
+
+            <div
+              class="p-space-md bg-surface-container-lowest border-t-[2.5px] border-[#111111] dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+            >
+              <div
+                class="inline-block px-2 py-0.5 bg-secondary-container text-[#111111] font-label-sm text-[11px] uppercase rounded border border-[#111111] font-extrabold mb-1"
+              >
+                Pelatihan Akbar di Hotel
+              </div>
+
+              <h3
+                class="font-headline-sm text-base uppercase text-[#111111] font-extrabold dark:text-[#e8f9f0]"
+              >
+                Peserta Program Tahfidz Qumillaila
+              </h3>
+
+              <p
+                class="font-body-sm text-xs text-on-surface-variant mt-1 text-justify dark:text-[#93bbaa]"
+              >
+                Diikuti puluhan peserta ikhwan dan akhwat dari berbagai daerah
+                dengan antusiasme mempraktikkan simulasi hafalan seimbang.
+              </p>
+            </div>
+          </div>
+
+          <!-- Secondary Photos Grid -->
+
+          <div class="grid grid-cols-2 gap-space-sm desktop:grid-cols-2 desktop:gap-4 wide:grid-cols-4 desktop:items-start">
+            <!-- Photo 1: Ustadz Mengajar -->
+            <div
+              class="rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] overflow-hidden bg-white flex flex-col dark:bg-[#05261b] dark:text-[#e2f4eb] dark:border-[#047857] dark:shadow-[4px_4px_0px_#010a06]"
+            >
+              <img
+                alt="Ustadz H. Hanafi Nasution memaparkan materi metode tahfizh"
+                class="w-full h-48 object-cover object-center desktop:h-56"
+                src="image/materi.png"
+              />
+
+              <div
+                class="p-2 bg-surface-container-lowest border-t-[1.5px] border-[#111111] flex-1 dark:bg-[#083324] dark:text-[#e2f4eb] dark:border-[#065f46]"
+              >
+                <span
+                  class="font-label-sm text-[10px] uppercase font-bold text-[#006b58] block dark:text-[#6ee7b7]"
+                  >Pemaparan Materi</span
+                >
+
+                <p
+                  class="font-body-sm text-[11px] text-[#111111] leading-tight text-justify dark:text-[#e8f9f0]"
+                >
+                  Ustadz Hanafi memaparkan rumus 4 langkah tahfizh.
+                </p>
+              </div>
+            </div>
+
+            <!-- Photo 2: Angkatan Akhwat -->
+            <div
+              class="rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] overflow-hidden bg-white flex flex-col dark:bg-[#05261b] dark:text-[#e2f4eb] dark:border-[#047857] dark:shadow-[4px_4px_0px_#010a06]"
+            >
+              <img
+                alt="Angkatan Peserta Akhwat Pelatihan Qumillaila"
+                class="w-full h-48 object-cover object-center desktop:h-56"
+                src="image/akhwat.png"
+              />
+
+              <div
+                class="p-2 bg-surface-container-lowest border-t-[1.5px] border-[#111111] flex-1 dark:bg-[#083324] dark:text-[#e2f4eb] dark:border-[#065f46]"
+              >
+                <span
+                  class="font-label-sm text-[10px] uppercase font-bold text-[#d97706] block dark:text-yellow-300"
+                  >Peserta Akhwat</span
+                >
+
+                <p
+                  class="font-body-sm text-[11px] text-[#111111] leading-tight text-justify dark:text-[#e8f9f0]"
+                >
+                  Ibu-ibu dan mahasiswi aktif menghafal &amp; muraja'ah.
+                </p>
+              </div>
+            </div>
+
+            <!-- Photo 3: Dompet Dhuafa -->
+            <div
+              class="rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] overflow-hidden bg-white flex flex-col dark:bg-[#05261b] dark:text-[#e2f4eb] dark:border-[#047857] dark:shadow-[4px_4px_0px_#010a06]"
+            >
+              <img
+                alt="Kolaborasi bersama Dompet Dhuafa dan Komunitas"
+                class="w-full h-48 object-cover object-center desktop:h-56"
+                src="image/sinergi.png"
+              />
+
+              <div
+                class="p-2 bg-surface-container-lowest border-t-[1.5px] border-[#111111] flex-1 dark:bg-[#083324] dark:text-[#e2f4eb] dark:border-[#065f46]"
+              >
+                <span
+                  class="font-label-sm text-[10px] uppercase font-bold text-[#006b58] block dark:text-[#6ee7b7]"
+                  >Sinergi Lembaga</span
+                >
+
+                <p
+                  class="font-body-sm text-[11px] text-[#111111] leading-tight text-justify dark:text-[#e8f9f0]"
+                >
+                  Sosialisasi bersama Dompet Dhuafa &amp; Komunitas Muslim Jepang.
+                </p>
+              </div>
+            </div>
+
+            <!-- Photo 4: Penyerahan ke Pesantren / Boarding School -->
+            <div
+              class="rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] overflow-hidden bg-white flex flex-col dark:bg-[#05261b] dark:text-[#e2f4eb] dark:border-[#047857] dark:shadow-[4px_4px_0px_#010a06]"
+            >
+              <img
+                alt="Kemitraan bersama Pesantren dan Boarding School"
+                class="w-full h-48 object-cover object-[center_30%] desktop:h-56"
+                src="image/sekolah.jpeg"
+              />
+
+              <div
+                class="p-2 bg-surface-container-lowest border-t-[1.5px] border-[#111111] flex-1 dark:bg-[#083324] dark:text-[#e2f4eb] dark:border-[#065f46]"
+              >
+                <span
+                  class="font-label-sm text-[10px] uppercase font-bold text-[#111111] block dark:text-[#e8f9f0]"
+                  >Mitra Pesantren</span
+                >
+
+                <p
+                  class="font-body-sm text-[11px] text-[#111111] leading-tight text-justify dark:text-[#e8f9f0]"
+                >
+                  Diadopsi kurikulum boarding school dan pesantren.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAKET PEMESANAN (PRICING & OFFER) -->
+
+        <section class="flex flex-col" id="order">
+          <div class="flex items-center gap-space-xs mb-space-sm">
+            <span
+              class="px-space-sm py-1 bg-secondary-container text-[#111111] font-label-md text-label-md uppercase rounded border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] font-bold"
+            >
+              Pilihan Paket
+            </span>
+          </div>
+
+          <h2
+            class="font-headline-lg-mobile text-headline-lg-mobile uppercase desktop:text-4xl text-[#111111] tracking-tight leading-tight mb-space-md font-extrabold dark:text-[#e8f9f0]"
+          >
+            Pesan Buku &amp; Ikuti Pelatihan
+          </h2>
+
+          <div class="flex flex-col gap-space-lg desktop:grid desktop:grid-cols-[1.2fr_0.8fr] desktop:items-start desktop:gap-8">
+            <!-- HERO OFFER CARD (PAKET BUKU FISIK LENGKAP) -->
+
+            <div
+              class="w-full bg-surface-container-lowest rounded-2xl border-[3px] border-[#111111] shadow-[6px_6px_0px_#111111] relative overflow-hidden dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+            >
+              <!-- Top Accent Band -->
+
+              <div
+                class="h-4 bg-[#006b58] border-b-[2.5px] border-[#111111]"
+              ></div>
+
+              <div class="p-space-lg">
+                <div class="flex items-center justify-between mb-space-sm">
+                  <span
+                    class="font-headline-md text-headline-md uppercase text-[#111111] tracking-tight font-extrabold dark:text-[#e8f9f0]"
+                    >Paket Buku Lengkap</span
+                  >
+
+                  <span
+                    class="px-space-sm py-1 bg-secondary-container text-[#111111] font-label-sm text-label-sm uppercase rounded-full border-[1.5px] border-[#111111] shadow-[2px_2px_0px_#111111] font-extrabold"
+                  >
+                    ⚡ PALING LARIS
+                  </span>
+                </div>
+
+                <!-- Price Display -->
+
+                <div class="flex items-baseline gap-space-xs mb-space-md">
+                  <span
+                    class="font-headline-xl text-3xl text-[#111111] leading-none font-extrabold dark:text-[#e8f9f0]"
+                    >Rp 145.909</span
+                  >
+
+                  <span
+                    class="font-headline-sm text-base line-through text-on-surface-variant/60 font-bold dark:text-[#93bbaa]"
+                    >Rp 205.999</span
+                  >
+                </div>
+
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-space-md dark:text-[#93bbaa]"
+                >
+                  Buku cetak fisik eksklusif dikirim ke alamat anda, Aman sampai tujuan!
+                </p>
+
+                <!-- Feature Checklist -->
+
+                <div
+                  class="space-y-space-sm border-t-[2px] border-[#111111] pt-space-md mb-space-lg"
+                >
+                  <div class="flex items-start gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-[#006b58] text-[20px] shrink-0 mt-0.5 font-bold dark:text-[#6ee7b7]"
+                      >check_box</span
+                    >
+
+                    <span
+                      class="font-body-sm text-body-sm text-[#111111] font-semibold dark:text-[#e8f9f0]"
+                      >1x Buku Cetak Eksklusif Metode Tahfizh QUMILLAILA</span
+                    >
+                  </div>
+
+                  <div class="flex items-start gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-[#006b58] text-[20px] shrink-0 mt-0.5 font-bold dark:text-[#6ee7b7]"
+                      >check_box</span
+                    >
+                    <span
+                      class="font-body-sm text-body-sm text-[#111111] font-semibold dark:text-[#e8f9f0]"
+                      >Bagan &amp; Form Evaluasi Muraja'ah Harian Mandiri</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Checkout Button -->
+
+                <button
+                  class="w-full py-space-md px-space-md rounded-xl bg-secondary-container text-[#111111] border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] font-label-lg text-label-lg uppercase tracking-wider flex items-center justify-center gap-space-xs transition-all duration-75 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none hover:-translate-x-[1px] hover:-translate-y-[1px] cursor-pointer"
+                  data-action="openOrderModal"
+                  type="button"
+                >
+                  <span>Pesan Buku Sekarang 📖</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- WORKSHOP / TRAINING CARD -->
+
+            <div
+              class="w-full bg-[#FAF6F0] rounded-xl border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] p-space-lg dark:bg-[#05261b] dark:text-[#e2f4eb] dark:border-[#047857] dark:shadow-[4px_4px_0px_#010a06]"
+            >
+              <div class="flex items-center justify-between mb-space-xs">
+                <span
+                  class="font-headline-sm text-lg uppercase text-[#111111] font-extrabold dark:text-[#e8f9f0]"
+                  >Pelatihan &amp; Workshop Lembaga</span
+                >
+
+                <span
+                  class="px-2 py-0.5 bg-tertiary-fixed text-[#111111] font-label-sm text-[11px] uppercase rounded border border-[#111111] font-bold"
+                  >Kemitraan</span
+                >
+              </div>
+
+              <p
+                class="font-body-sm text-body-sm text-on-surface-variant mb-space-md text-justify dark:text-[#93bbaa]"
+              >
+                Mengundang Ustadz H. Hanafi Nasution, Lc. Al Hafizh untuk
+                pelatihan guru tahfizh, santri pesantren, sekolah Islam, atau
+                komunitas majelis taklim di kota Anda.
+              </p>
+
+              <a
+                class="w-full py-space-sm px-space-md rounded-lg bg-surface-bright text-[#111111] border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-space-xs transition-all duration-75 active:translate-x-[2px] active:translate-y-[2px]"
+                href="https://wa.me/?text=Bismillah,%20kami%20tertarik%20mengundang%20Ustadz%20Hanafi%20Nasution%20untuk%20Workshop%20Pelatihan%20Metode%20Tahfizh%20Qumillaila"
+              >
+                <span class="font-bold">Konsultasi Jadwal Pelatihan 🤝</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROFIL PENULIS (AUTHOR SPOTLIGHT) -->
+
+        <section class="flex flex-col">
+          <div class="flex items-center gap-space-xs mb-space-sm">
+            <span
+              class="px-space-sm py-1 bg-secondary-fixed text-[#111111] font-label-md text-label-md uppercase rounded border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] font-bold"
+            >
+              Mengenal Penulis
+            </span>
+          </div>
+
+          <div
+            class="w-full bg-surface-container-lowest rounded-2xl border-[3px] border-[#111111] shadow-[5px_5px_0px_#111111] p-space-lg flex flex-col gap-space-md dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857] desktop:grid desktop:grid-cols-[auto_1fr] desktop:items-start desktop:gap-x-8 desktop:gap-y-5 desktop:p-10"
+          >
+            <div class="flex items-start gap-space-md desktop:row-span-2 desktop:flex-col desktop:items-center desktop:text-center">
+              <div
+                class="w-24 h-24 rounded-2xl border-[2.5px] border-[#111111] shadow-[3px_3px_0px_#111111] overflow-hidden shrink-0 bg-secondary-fixed desktop:w-36 desktop:h-36"
+              >
+                <img
+                  alt="Ustadz H. Hanafi Nasution, Lc. Al Hafizh"
+                  class="w-full h-full object-cover object-top"
+                  src="image/materi.png"
+                />
+              </div>
+
+              <div class="flex flex-col min-w-0 desktop:items-center">
+                <span
+                  class="px-2 py-0.5 bg-tertiary-fixed text-[#111111] font-label-sm text-[10px] uppercase rounded border border-[#111111] self-start mb-1 font-bold"
+                >
+                  Penulis &amp; Pembina
+                </span>
+
+                <h3
+                  class="font-headline-md text-base uppercase text-[#111111] leading-tight font-extrabold truncate dark:text-[#e8f9f0]"
+                >
+                  H. Hanafi Nasution, Lc. Al Hafizh
+                </h3>
+
+                <p
+                  class="font-label-sm text-[11px] uppercase text-[#006b58] font-bold mt-0.5 dark:text-[#6ee7b7]"
+                >
+                  Alumnus Universitas Al-Azhar Kairo
+                </p>
+              </div>
+            </div>
+
+            <p
+              class="font-body-md text-sm text-[#111111] leading-normal font-medium text-justify dark:text-[#e8f9f0]"
+            >
+              Pemegang Sanad Kubro Qira'at As Sab'ah, Al 'Asyarah, dan As
+              Sadzdzah Al-Azhar Cairo Mesir. Berpengalaman bertahun-tahun
+              membimbing para penghafal Al-Qur'an dan menjadi narasumber
+              pelatihan tahfizh di puluhan lembaga, pesantren, dan instansi.
+            </p>
+
+            <p
+              class="font-body-md text-sm text-[#111111] leading-normal font-medium text-justify dark:text-[#e8f9f0]"
+            >
+              Berangkat dari pengalaman pribadi penulis dalam menimba ilmu di
+              Al-Azhar Cairo Mesir, khususnya mendalami ilmu-ilmu yang berkaitan
+              langsung dengan Al-Qur'an, seperti menghafal Al-Qur'an dan talaqqi
+              berbagai bacaan Qira'at Sab'ah, 'Asyarah, dan Syadzdzah, termasuk
+              ilmu Rasam, 'Udad, dan lainnya. Pengalaman tersebut telah memberikan
+              inspirasi dan motivasi kepada penulis untuk berbagi pengalaman dan
+              kebaikan, khususnya dalam mempersiapkan generasi Qurani yang tumbuh,
+              hidup, dan berjalan dalam minhaj kenabian.
+            </p>
+
+            <p
+              class="font-body-md text-sm text-[#111111] leading-normal font-medium text-justify dark:text-[#e8f9f0]"
+            >
+              Dalam berbagai pelatihan yang telah dilaksanakan, buku ini dapat
+              dipelajari hanya melalui pelatihan satu hari, termasuk praktik
+              ziyadah dan muraja'ah dengan pola yang teratur, nyaman, dan
+              menyenangkan. Semakin banyak peserta yang mengikuti pelatihan,
+              semakin mudah pula metode ini dikuasai dan diaplikasikan, baik
+              secara individu maupun di lembaga. Meskipun demikian, jumlah
+              peserta tetap dibatasi maksimal 100 orang dalam setiap pelatihan,
+              dengan kontribusi yang sangat relevan.
+            </p>
+
+            <!-- Credential Badges -->
+
+            <div
+              class="flex flex-wrap gap-2 pt-space-xs border-t-[1.5px] border-[#111111]/20"
+            >
+              <span
+                class="px-2.5 py-1 bg-surface-container rounded-lg border-[1.5px] border-[#111111] shadow-[1.5px_1.5px_0px_#111111] font-label-sm text-[11px] uppercase text-[#111111] font-bold"
+              >
+                🏛️ Al-Azhar Cairo, Mesir
+              </span>
+
+              <span
+                class="px-2.5 py-1 bg-surface-container rounded-lg border-[1.5px] border-[#111111] shadow-[1.5px_1.5px_0px_#111111] font-label-sm text-[11px] uppercase text-[#111111] font-bold"
+              >
+                👥 1.000+ Alumni Pelatihan
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- TESTIMONIALS & SOCIAL PROOF -->
+
+        <section class="flex flex-col">
+          <div class="flex items-center gap-space-xs mb-space-sm">
+            <span
+              class="px-space-sm py-1 bg-tertiary-fixed text-[#111111] font-label-md text-label-md uppercase rounded border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] font-bold"
+            >
+              Kesan Peserta
+            </span>
+          </div>
+
+          <h2
+            class="font-headline-lg-mobile text-headline-lg-mobile uppercase desktop:text-4xl text-[#111111] tracking-tight leading-tight mb-space-md font-extrabold dark:text-[#e8f9f0]"
+          >
+            Pengalaman Nyata Pembaca
+          </h2>
+
+          <div class="flex flex-col gap-space-md desktop:grid desktop:grid-cols-2 desktop:gap-6">
+            <!-- Review Card 1 -->
+
+            <div
+              class="relative bg-surface-container-lowest p-space-md rounded-2xl border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+            >
+              <div class="flex items-center justify-between mb-space-xs">
+                <div class="flex text-secondary font-bold text-base">★★★★★</div>
+
+                <span
+                  class="px-2 py-0.5 bg-secondary-container text-[#111111] font-label-sm text-[11px] uppercase rounded border border-[#111111] font-bold"
+                  >Peserta Pelatihan</span
+                >
+              </div>
+
+              <p
+                class="font-body-md text-sm text-[#111111] leading-snug mb-space-md font-medium text-justify dark:text-[#e8f9f0]"
+              >
+                “Dulu saya sering mengeluh cepat lupa ayat yang baru dihafal
+                kemarin. Setelah mempraktikkan pengulangan seimbang ala
+                Qumillaila, hafalan juz 30 dan juz 1 saya jauh lebih menempel
+                saat shalat malam.”
+              </p>
+
+              <div
+                class="flex items-center gap-space-sm border-t-[1.5px] border-[#111111]/20 pt-space-xs"
+              >
+                <div
+                  class="w-9 h-9 rounded-full bg-secondary-fixed border-[1.5px] border-[#111111] flex items-center justify-center font-label-sm text-sm font-extrabold text-[#111111]"
+                >
+                  RH
+                </div>
+
+                <div>
+                  <div
+                    class="font-label-md text-sm text-[#111111] leading-none font-bold dark:text-[#e8f9f0]"
+                  >
+                    Rahmat Hidayat
+                  </div>
+
+                  <div
+                    class="font-body-sm text-xs text-on-surface-variant leading-tight dark:text-[#93bbaa]"
+                  >
+                    Guru PAI &amp; Pembina Remaja Masjid
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 2 -->
+
+            <div
+              class="relative bg-surface-container-lowest p-space-md rounded-2xl border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+            >
+              <div class="flex items-center justify-between mb-space-xs">
+                <div class="flex text-secondary font-bold text-base">★★★★★</div>
+
+                <span
+                  class="px-2 py-0.5 bg-tertiary-fixed text-[#111111] font-label-sm text-[11px] uppercase rounded border border-[#111111] font-bold"
+                  >Ibu Rumah Tangga</span
+                >
+              </div>
+
+              <p
+                class="font-body-md text-sm text-[#111111] leading-snug mb-space-md font-medium text-justify dark:text-[#e8f9f0]"
+              >
+                “Buku ini sangat realistis untuk orang yang sudah berkeluarga
+                dan banyak kesibukan rumah tangga. Metodenya tidak menuntut jam
+                belajar berlebihan, tapi konsistensinya luar biasa!”
+              </p>
+
+              <div
+                class="flex items-center gap-space-sm border-t-[1.5px] border-[#111111]/20 pt-space-xs"
+              >
+                <div
+                  class="w-9 h-9 rounded-full bg-tertiary-fixed border-[1.5px] border-[#111111] flex items-center justify-center font-label-sm text-sm font-extrabold text-[#111111]"
+                >
+                  NA
+                </div>
+
+                <div>
+                  <div
+                    class="font-label-md text-sm text-[#111111] leading-none font-bold dark:text-[#e8f9f0]"
+                  >
+                    Nur Aisyah
+                  </div>
+
+                  <div
+                    class="font-body-sm text-xs text-on-surface-variant leading-tight dark:text-[#93bbaa]"
+                  >
+                    Peserta Kelas Ummahat Tahfizh
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+
+        <section class="flex flex-col pb-space-lg" id="faq">
+          <div class="flex items-center gap-space-xs mb-space-sm">
+            <span
+              class="px-space-sm py-1 bg-surface-container-high text-[#111111] font-label-md text-label-md uppercase rounded border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] font-bold"
+            >
+              Tanya Jawab
+            </span>
+          </div>
+
+          <h2
+            class="font-headline-lg-mobile text-headline-lg-mobile uppercase desktop:text-4xl text-[#111111] tracking-tight leading-tight mb-space-md font-extrabold dark:text-[#e8f9f0]"
+          >
+            Pertanyaan Sering Diajukan
+          </h2>
+
+          <div class="flex flex-col gap-space-sm desktop:grid desktop:grid-cols-2 desktop:gap-6 wide:grid-cols-3">
+            <!-- FAQ 1 -->
+
+            <div
+              class="w-full bg-surface-container-lowest rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] p-space-md dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+            >
+              <h4
+                class="font-headline-sm text-base uppercase text-[#111111] mb-1 flex items-center justify-between font-extrabold dark:text-[#e8f9f0]"
+              >
+                <span>Apakah buku ini cocok untuk pemula?</span>
+
+                <span class="text-[#006b58] font-bold dark:text-[#6ee7b7]"
+                  >✓</span
+                >
+              </h4>
+
+              <p
+                class="font-body-sm text-sm text-on-surface-variant text-justify dark:text-[#93bbaa]"
+              >
+                Sangat cocok. Buku ini dirancang khusus dari langkah paling
+                dasar bagi siapapun yang baru mulai menghafal, maupun yang sudah
+                memiliki hafalan tapi sering lupa saat muraja'ah.
+              </p>
+            </div>
+
+            <!-- FAQ 2 -->
+
+            <div
+              class="w-full bg-surface-container-lowest rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] p-space-md dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+            >
+              <h4
+                class="font-headline-sm text-base uppercase text-[#111111] mb-1 flex items-center justify-between font-extrabold dark:text-[#e8f9f0]"
+              >
+                <span>Berapa lama estimasi pengiriman buku?</span>
+
+                <span class="text-[#006b58] font-bold dark:text-[#6ee7b7]"
+                  >✓</span
+                >
+              </h4>
+
+              <p
+                class="font-body-sm text-sm text-on-surface-variant text-justify dark:text-[#93bbaa]"
+              >
+                Pengiriman dilakukan setiap hari kerja ke seluruh wilayah
+                Indonesia melalui ekspedisi terpercaya (JNE, J&amp;T).
+                Estimasi tiba 2-4 hari kerja tergantung lokasi Anda.
+              </p>
+            </div>
+
+            <!-- FAQ 3 -->
+
+            <div
+              class="w-full bg-surface-container-lowest rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] p-space-md dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+            >
+              <h4
+                class="font-headline-sm text-base uppercase text-[#111111] mb-1 flex items-center justify-between font-extrabold dark:text-[#e8f9f0]"
+              >
+                <span>Bagaimana cara mengundang pelatihan untuk lembaga?</span>
+
+                <span class="text-[#006b58] font-bold dark:text-[#6ee7b7]"
+                  >✓</span
+                >
+              </h4>
+
+              <p
+                class="font-body-sm text-sm text-on-surface-variant text-justify dark:text-[#93bbaa]"
+              >
+                Anda dapat langsung menghubungi Customer Service kami melalui
+                tombol WhatsApp yang tersedia untuk koordinasi jadwal, proposal
+                kegiatan, dan format workshop yang dibutuhkan.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- FOOTER -->
+
+      <footer
+        class="w-full px-gutter-sm pt-space-xl pb-space-lg mt-space-xl flex flex-col items-center gap-space-md bg-[#e2ede7] text-center border-t-[2.5px] border-[#111111] transition-colors duration-200 dark:bg-[#02120b] dark:border-[#065f46] desktop:px-10 desktop:py-10"
+      >
+        <div class="flex flex-wrap justify-center gap-space-sm">
+          <span
+            class="px-space-sm py-space-xs rounded bg-surface font-label-sm text-label-sm uppercase text-[#111111] border border-[#111111] font-bold"
+            >Metode Qumillaila</span
+          >
+
+          <span
+            class="px-space-sm py-space-xs rounded bg-tertiary-fixed text-[#111111] font-label-sm text-label-sm uppercase border border-[#111111] font-bold"
+            >Sanad Al-Azhar Mesir</span
+          >
+        </div>
+
+        <div
+          class="flex gap-space-md font-label-sm text-xs uppercase text-[#111111] font-bold dark:text-[#e8f9f0]"
+        >
+          <a class="hover:underline" href="#">Profil</a>
+
+          <a class="hover:underline" href="#order">Pesan Buku</a>
+
+          <a class="hover:underline" href="https://wa.me/">Kontak CS</a>
+
+          <a class="hover:underline" href="https://intagram/">Kontak CS</a>
+        </div>
+
+        <!-- Media Sosial -->
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-[#555555] dark:text-[#c5d8ce]">
+
+          <!-- Instagram -->
+          <a
+            href="https://www.instagram.com/qumillaila__?srtk=MWcxaDU4NTc3d3Yxdg%3D%3D&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-1.5 hover:text-pink-500 transition-colors"
+          >
+            <img
+              src="https://cdn.simpleicons.org/instagram/E4405F"
+              alt="Instagram"
+              class="w-4 h-4"
+            />
+            <span>@qumillaila__</span>
+          </a>
+
+          <!-- TikTok -->
+          <a
+            href="https://www.tiktok.com/@qumillaila_3?_r=1&_t=ZS-9BTi2AFhN8G"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-1.5 hover:text-black transition-colors dark:hover:text-white"
+          >
+            <img
+              src="https://cdn.simpleicons.org/tiktok/000000"
+              alt="TikTok"
+              class="w-4 h-4 dark:invert"
+            />
+            <span>@qumillaila_3</span>
+          </a>
+
+          <!-- Facebook -->
+          <a
+            href="https://www.facebook.com/share/16RZvFUGpEe/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-1.5 hover:text-blue-500 transition-colors"
+          >
+            <img
+              src="https://cdn.simpleicons.org/facebook/1877F2"
+              alt="Facebook"
+              class="w-4 h-4"
+            />
+            <span>Qumillaila Metode Tahfizh</span>
+          </a>
+
+          <!-- YouTube -->
+          <a
+            href="https://www.youtube.com/@QumillailaMetodeTahfizh"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-1.5 hover:text-red-500 transition-colors"
+          >
+            <img
+              src="https://cdn.simpleicons.org/youtube/FF0000"
+              alt="YouTube"
+              class="w-4 h-4"
+            />
+            <span>Qumillaila Metode Tahfizh</span>
+          </a>
+
+        </div>
+
+      </div>
+
+        <p
+          class="font-body-sm text-xs text-on-surface-variant dark:text-[#93bbaa]"
+        >
+          © 2026 Program Tahfizh Qumillaila · Penulis: H. Hanafi
+          Nasution, Lc. Al Hafizh. All rights reserved.
+        </p>
+      </footer>
+    </main>
+
+    <!-- BOTTOM STICKY NAVIGATION BAR -->
+
+    <nav
+      class="fixed bottom-0 w-full z-40 desktop:hidden pb-[env(safe-area-inset-bottom,0px)] bg-[#daf8f9]/97 backdrop-blur-xl border-t-[2.5px] border-[#111111] transition-colors duration-200 dark:bg-[#00170e]/95 dark:border-[#065f46]"
+      id="bottomNav"
+    >
+      <div
+        class="h-20 px-gutter-sm flex items-center justify-between gap-space-sm"
+      >
+        <div class="flex flex-col min-w-0 pr-space-xs">
+          <span
+            class="font-label-lg text-sm text-[#111111] font-extrabold leading-tight truncate dark:text-[#e8f9f0]"
+            >Rp 145.909 · Buku Fisik</span
+          >
+
+          <span
+            class="font-body-sm text-xs text-[#006b58] font-bold truncate dark:text-[#6ee7b7]"
+            >Dapatkan Promo Terbaik</span
+          >
+        </div>
+
+        <div class="flex items-center gap-space-xs shrink-0">
+          <a
+            class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center text-[#111111] border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] transition-all duration-75 active:translate-x-[2px] active:translate-y-[2px] dark:bg-[#083324] dark:text-[#e2f4eb] dark:border-[#065f46]"
+            href="https://wa.me/08216760220/?text=Assalamu%27alaikum,%20saya%20ingin%20tanya%20mengenai%20Buku%20dan%20Pelatihan%20Metode%20Qumillaila"
+            title="Hubungi Admin WhatsApp"
+          >
+            <span
+              class="material-symbols-outlined text-[22px] text-[#006b58] dark:text-[#6ee7b7]"
+              >chat</span
+            >
+          </a>
+
+          <button
+            class="h-11 px-space-md rounded-lg bg-secondary-container text-[#111111] border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] font-label-lg text-xs uppercase tracking-wider flex items-center justify-center gap-space-xs font-bold transition-all duration-75 active:translate-x-[2px] active:translate-y-[2px] cursor-pointer"
+            data-action="openOrderModal"
+            type="button"
+          >
+            <span>Beli Buku</span>
+
+            <span>📖</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MODAL ORDER CHANNEL / CHECKOUT SELECTION (NEO-BRUTALIST POP-UP) -->
+
+    <div
+      class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 hidden"
+      id="orderModal"
+    >
+      <!-- Backdrop semi-transparan gelap -->
+
+      <div
+        class="fixed inset-0 bg-[#111111]/75 backdrop-blur-xs transition-opacity duration-200"
+        data-action="closeOrderModal"
+      ></div>
+
+      <!-- Modal Dialog Container -->
+
+      <div
+        class="relative w-full max-w-lg max-h-[90vh] bg-[#FAF6F0] desktop:max-w-2xl rounded-2xl border-[3px] border-[#111111] shadow-[6px_6px_0px_#111111] flex flex-col z-10 overflow-hidden animate-in fade-in zoom-in-95 duration-150 dark:bg-[#032015] dark:border-[#059669] dark:text-[#e2f4eb]"
+      >
+        <!-- Modal Header -->
+
+        <div
+          class="px-space-md py-3.5 bg-secondary-container border-b-[2.5px] border-[#111111] flex items-center justify-between shrink-0"
+        >
+          <div class="flex items-center gap-2 min-w-0 pr-2">
+            <span
+              class="px-2 py-0.5 bg-[#111111] text-[#FAF6F0] font-label-sm text-[10px] uppercase font-extrabold rounded"
+              >Checkout</span
+            >
+
+            <div class="flex flex-col min-w-0">
+              <span
+                class="font-headline-sm text-xs sm:text-sm uppercase tracking-tight text-[#111111] dark:text-[#f1f8f5] font-extrabold truncate"
+                >PILIH JALUR PEMESANAN</span
+              >
+
+              <span
+                class="font-label-sm text-[10px] uppercase text-[#541200] font-bold"
+                >100% Produk Original &amp; Terpercaya</span
+              >
+            </div>
+          </div>
+
+          <!-- Close Button '✕' -->
+
+          <button
+            aria-label="Tutup Pilihan Pemesanan"
+            class="w-8 h-8 rounded-lg bg-surface-container-lowest text-[#111111] font-extrabold text-base border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] flex items-center justify-center shrink-0 transition-transform active:translate-x-[1px] active:translate-y-[1px] hover:bg-error-container hover:text-error cursor-pointer"
+            data-action="closeOrderModal"
+            type="button"
+          >
+            ✕
+          </button>
+        </div>
+
+        <!-- Modal Body -->
+
+        <div
+          class="p-space-md sm:p-space-lg overflow-y-auto space-y-space-md text-[#111111] dark:text-[#f1f8f5]"
+        >
+          <div>
+            <h3
+              class="font-headline-sm text-base sm:text-lg uppercase text-[#111111] font-extrabold leading-snug dark:text-[#e8f9f0]"
+            >
+              Mau Pesan Lewat Mana?
+            </h3>
+
+            <p
+              class="font-body-sm text-xs text-on-surface-variant mt-1 leading-relaxed dark:text-[#93bbaa]"
+            >
+              Pilih marketplace resmi atau konsultasi langsung melalui WhatsApp
+              kami untuk mendapatkan buku beserta bonus panduan.
+            </p>
+          </div>
+
+          <!-- List Channel Order -->
+
+          <div class="flex flex-col gap-2.5">
+            <!-- SHOPEE -->
+
+            <a
+              class="p-3 bg-surface-container-lowest rounded-xl border-[2.5px] border-[#111111] shadow-[3px_3px_0px_#111111] flex items-center justify-between gap-3 transition-all duration-75 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none hover:bg-orange-50/50 group dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+              href="https://id.shp.ee/cwPzvGBM"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <div class="flex items-center gap-3 min-w-0">
+                <div
+                  class="w-11 h-11 rounded-lg bg-[#EE4D2D] border-[2px] border-[#111111] shadow-[1.5px_1.5px_0px_#111111] flex items-center justify-center shrink-0 text-white"
+                >
+                  <svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+                    <path
+                      d="M19.7 7.2h-3.1C16.3 4.3 14.4 2 12 2s-4.3 2.3-4.6 5.2H4.3C3.6 7.2 3 7.8 3 8.5l1.6 12c.1.8.8 1.5 1.7 1.5h11.4c.9 0 1.6-.7 1.7-1.5L21 8.5c0-.7-.6-1.3-1.3-1.3zM12 3.8c1.3 0 2.5 1.5 2.7 3.4H9.3c.2-1.9 1.4-3.4 2.7-3.4zm1.1 12.7c-.5.4-1.2.7-2.1.7-1.3 0-2.3-.6-2.3-2 0-1.6 1.4-2.1 2.9-2.5.9-.2 1.3-.4 1.3-.8 0-.4-.4-.7-1.1-.7-.8 0-1.5.3-1.8.6l-.6-1.2c.6-.5 1.5-.8 2.5-.8 1.5 0 2.4.7 2.4 2 0 1.3-1 1.9-2.5 2.3-.9.2-1.6.4-1.6 1 0 .5.5.8 1.1.8.7 0 1.4-.3 1.7-.7l.6 1.1z"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="min-w-0">
+                  <div class="flex items-center gap-1.5 flex-wrap">
+                    <span
+                      class="font-headline-sm text-sm uppercase text-[#111111] font-extrabold leading-tight dark:text-[#e8f9f0]"
+                      >Shopee Official Store</span
+                    >
+
+                    <span
+                      class="px-1.5 py-0.2 bg-[#EE4D2D]/15 text-[#EE4D2D] font-label-sm text-[9px] uppercase font-bold rounded border border-[#EE4D2D]"
+                      >Toko Resmi</span
+                    >
+                  </div>
+
+                  <p
+                    class="font-body-sm text-xs text-on-surface-variant truncate mt-0.5 dark:text-[#93bbaa]"
+                  >
+                    Gratis Ongkir XTRA &amp; Bisa COD
+                  </p>
+                </div>
+              </div>
+
+              <span
+                class="material-symbols-outlined text-[20px] text-[#111111] group-hover:translate-x-0.5 transition-transform shrink-0 dark:text-[#e8f9f0]"
+                >arrow_forward</span
+              >
+            </a>
+
+                        <!-- TIKTOK SHOP -->
+
+            <a class="p-3 bg-surface-container-lowest rounded-xl border-[2.5px] border-[#111111] shadow-[3px_3px_0px_#111111] flex items-center justify-between gap-3 transition-all duration-75 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none hover:bg-gray-100 group dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]" href="https://www.tiktok.com/@qumillaila_3?_r=1&_t=ZS-9BTi2AFhN8G" rel="noopener noreferrer" target="_blank">
+
+            <div class="flex items-center gap-3 min-w-0">
+
+            <div class="w-11 h-11 rounded-lg bg-[#111111] border-[2px] border-[#111111] shadow-[1.5px_1.5px_0px_#111111] flex items-center justify-center shrink-0 text-white">
+
+            <span class="material-symbols-outlined text-[26px]">music_note</span>
+
+            </div>
+
+            <div class="min-w-0">
+
+            <div class="flex items-center gap-1.5 flex-wrap">
+
+            <span class="font-headline-sm text-sm uppercase text-[#111111] font-extrabold leading-tight dark:text-[#e8f9f0]">TikTok Shop</span>
+
+            <span class="px-1.5 py-0.2 bg-[#111111]/10 text-[#111111] font-label-sm text-[9px] uppercase font-bold rounded border border-[#111111]/30 dark:bg-white/10 dark:text-white dark:border-white/30">Marketplace</span>
+
+            </div>
+
+            <p class="font-body-sm text-xs text-on-surface-variant truncate mt-0.5 dark:text-[#93bbaa]">Lihat produk dan promo di TikTok Shop</p>
+
+            </div>
+
+            </div>
+
+            <span class="material-symbols-outlined text-[20px] text-[#111111] group-hover:translate-x-0.5 transition-transform shrink-0 dark:text-[#e8f9f0]">arrow_forward</span>
+
+            </a>
+            <!-- WHATSAPP ADMIN & KONSULTASI -->
+
+            <a
+              class="p-3 bg-secondary-container/20 rounded-xl border-[2.5px] border-[#111111] shadow-[3px_3px_0px_#111111] flex items-center justify-between gap-3 transition-all duration-75 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none hover:bg-secondary-container/35 group"
+              href="https://wa.me/08216760220/?text=Bismillah,%20saya%20ingin%20memesan%20Buku%20Metode%20Tahfizh%20Qumillaila%20karya%20Ustadz%20Hanafi%20Nasution"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <div class="flex items-center gap-3 min-w-0">
+                <div
+                  class="w-11 h-11 rounded-lg bg-[#25D366] border-[2px] border-[#111111] shadow-[1.5px_1.5px_0px_#111111] flex items-center justify-center shrink-0 text-white"
+                >
+                  <svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+                    <path
+                      d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 18.06c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.1 8.1 0 0 1-1.24-4.29c0-4.5 3.66-8.16 8.16-8.16 2.18 0 4.23.85 5.77 2.39a8.12 8.12 0 0 1 2.4 5.77c0 4.5-3.66 8.15-8.17 8.15zm4.47-6.1c-.25-.12-1.46-.72-1.68-.8-.23-.09-.39-.13-.56.12-.17.25-.64.8-.78.97-.15.17-.29.19-.53.07-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.46-.6 1.67-1.17.21-.58.21-1.07.15-1.18-.07-.11-.23-.17-.47-.29z"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="min-w-0">
+                  <div class="flex items-center gap-1.5 flex-wrap">
+                    <span
+                      class="font-headline-sm text-sm uppercase text-[#111111] font-extrabold leading-tight dark:text-[#e8f9f0]"
+                      >WhatsApp Admin &amp; Konsultasi</span
+                    >
+
+                    <span
+                      class="px-1.5 py-0.2 bg-[#25D366]/20 text-[#006b58] font-label-sm text-[9px] uppercase font-bold rounded border border-[#25D366] dark:text-[#6ee7b7]"
+                      >Fast Response</span
+                    >
+                  </div>
+
+                  <p
+                    class="font-body-sm text-xs text-on-surface-variant truncate mt-0.5 dark:text-[#93bbaa]"
+                  >
+                    Respon Cepat, Tanya Jawab Sanad &amp; Transfer Langsung
+                  </p>
+                </div>
+              </div>
+
+              <span
+                class="material-symbols-outlined text-[20px] text-[#006b58] group-hover:translate-x-0.5 transition-transform shrink-0 font-bold dark:text-[#6ee7b7]"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+
+        <div
+          class="px-space-md py-3 bg-surface-container-low border-t-[2px] border-[#111111] flex items-center justify-between shrink-0 dark:bg-[#083324] dark:text-[#e2f4eb] dark:border-[#065f46]"
+        >
+          <span
+            class="font-label-sm text-[11px] text-on-surface-variant font-medium dark:text-[#93bbaa]"
+            >Buku Asli &amp; Garansi Pengiriman</span
+          >
+
+          <button
+            class="px-3 py-1 bg-surface-container-lowest text-[#111111] font-label-sm text-xs uppercase font-bold rounded border border-[#111111] shadow-[1.5px_1.5px_0px_#111111] active:translate-x-[1px] active:translate-y-[1px] cursor-pointer"
+            data-action="closeOrderModal"
+            type="button"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL PREVIEW BAB 1 (POP-UP INTERAKTIF NEO-BRUTALIST) -->
+
+    <div
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5"
+      id="previewModal"
+    >
+      <!-- Backdrop semi-transparan gelap -->
+
+      <div
+        class="fixed inset-0 bg-[#111111]/75 backdrop-blur-xs transition-opacity duration-200"
+        data-action="closePreviewModal"
+      ></div>
+
+      <!-- Modal Dialog Container -->
+
+      <div
+        class="relative w-full max-w-lg max-h-[88vh] bg-[#FAF6F0] desktop:max-w-4xl rounded-2xl border-[3px] border-[#111111] shadow-[6px_6px_0px_#111111] flex flex-col z-10 overflow-hidden animate-in fade-in zoom-in-95 duration-150 dark:bg-[#032015] dark:border-[#059669] dark:text-[#e2f4eb]"
+      >
+        <!-- Modal Header (Neo-Brutalist) -->
+
+        <div
+          class="px-space-md py-3.5 bg-secondary-container border-b-[2.5px] border-[#111111] flex items-center justify-between shrink-0"
+        >
+          <div class="flex items-center gap-2 min-w-0 pr-2">
+            <span
+              class="px-2 py-0.5 bg-[#111111] text-[#FAF6F0] font-label-sm text-[10px] uppercase font-extrabold rounded"
+              >Bab 01</span
+            >
+
+            <div class="flex flex-col min-w-0">
+              <span
+                class="font-headline-sm text-xs sm:text-sm uppercase tracking-tight text-[#111111] dark:text-[#f1f8f5] font-extrabold truncate"
+                >Preview Isi Buku</span
+              >
+
+              <span
+                class="font-label-sm text-[10px] uppercase text-[#541200] font-bold"
+                >Halaman 15 - 28</span
+              >
+            </div>
+          </div>
+
+          <!-- Close Button '✕' -->
+
+          <button
+            aria-label="Tutup Preview"
+            class="w-8 h-8 rounded-lg bg-surface-container-lowest text-[#111111] font-extrabold text-base border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] flex items-center justify-center shrink-0 transition-transform active:translate-x-[1px] active:translate-y-[1px] hover:bg-error-container hover:text-error cursor-pointer"
+            data-action="closePreviewModal"
+            type="button"
+          >
+            ✕
+          </button>
+        </div>
+
+        <!-- Modal Scrollable Content -->
+
+        <div
+          class="p-space-md sm:p-space-lg overflow-y-auto space-y-space-md text-[#111111] dark:text-[#f1f8f5]"
+        >
+          <!-- Header Bab Title Card -->
+
+          <div
+            class="bg-surface-container-lowest p-space-md rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+          >
+            <div
+              class="inline-flex items-center gap-1.5 px-2 py-0.5 bg-tertiary-fixed text-[#111111] rounded border border-[#111111] font-label-sm text-[10px] uppercase font-bold mb-2"
+            >
+              <span>🎯</span>
+
+              <span>Fondasi Mental &amp; Spiritual</span>
+            </div>
+
+            <h3
+              class="font-headline-sm text-base sm:text-lg uppercase text-[#111111] font-extrabold leading-snug dark:text-[#e8f9f0]"
+            >
+              Mindset &amp; Fondasi Kuat Penghafal Al-Qur'an
+            </h3>
+
+            <p
+              class="font-body-sm text-xs text-on-surface-variant mt-1 dark:text-[#93bbaa]"
+            >
+              Oleh: H. Hanafi Nasution, Lc. Al Hafizh (Al-Azhar Cairo)
+            </p>
+          </div>
+
+          <!-- Bagian 1: Pengantar Bedah Masalah -->
+
+          <div class="space-y-1.5">
+            <h4
+              class="font-headline-sm text-xs uppercase tracking-wider text-[#006b58] font-extrabold flex items-center gap-1.5 dark:text-[#6ee7b7]"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-[#006b58] inline-block"
+              ></span>
+
+              Mengapa Banyak Orang Gagal Bertahan Menghafal?
+            </h4>
+
+            <p
+              class="font-body-sm text-xs sm:text-sm text-[#111111] leading-relaxed dark:text-[#e8f9f0]"
+            >
+              Kekeliruan paling umum dari 90% orang yang mulai menghafal adalah
+              menganggap bahwa Al-Qur'an hanya bisa dihafal oleh mereka yang
+              memiliki <strong>"otak jenius"</strong> atau memori fotografis.
+              Padahal, Allah ﷻ telah berfirman sebanyak 4 kali dalam Surah
+              Al-Qamar:
+              <em
+                >"Dan sungguh, telah Kami mudahkan Al-Qur'an untuk peringatan,
+                maka adakah orang yang mau mengambil pelajaran?"</em
+              >. Kegagalan bukan di kapasitas akal, melainkan di
+              <strong>konstruksi niat dan cara pandang</strong>.
+            </p>
+          </div>
+
+          <!-- Bagian 2: Poin Inti 1 -->
+
+          <div
+            class="bg-surface-container-lowest p-3.5 rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] space-y-1 dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+          >
+            <div class="flex items-center gap-2">
+              <span
+                class="w-6 h-6 rounded-md bg-secondary-container border border-[#111111] flex items-center justify-center font-bold text-xs shrink-0 text-[#111111]"
+                >1</span
+              >
+
+              <h5
+                class="font-headline-sm text-xs uppercase font-extrabold text-[#111111] dark:text-[#e8f9f0]"
+              >
+                'Al-Hifzhu fil Qalbi, Laisa fis Suthur'
+              </h5>
+            </div>
+
+            <p
+              class="font-body-sm text-xs text-[#111111] leading-relaxed pl-8 dark:text-[#e8f9f0]"
+            >
+              Menghafal hakikatnya menanam kalam ilahi ke dalam dada nurani,
+              bukan sekadar memindai teks di atas kertas. Saat orientasi diubah
+              dari sekadar "mengejar target lembaran" menjadi
+              <em>"bermesraan bersama Allah setiap bait ayat"</em>, beban mental
+              (mental block) seketika luntur.
+            </p>
+          </div>
+
+          <!-- Bagian 3: Poin Inti 2 -->
+
+          <div
+            class="bg-surface-container-lowest p-3.5 rounded-xl border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] space-y-1 dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857]"
+          >
+            <div class="flex items-center gap-2">
+              <span
+                class="w-6 h-6 rounded-md bg-tertiary-fixed border border-[#111111] flex items-center justify-center font-bold text-xs shrink-0 text-[#111111]"
+                >2</span
+              >
+
+              <h5
+                class="font-headline-sm text-xs uppercase font-extrabold text-[#111111] dark:text-[#e8f9f0]"
+              >
+                Konsep Ember Bocor: Sinergi Ziyadah &amp; Muraja'ah
+              </h5>
+            </div>
+
+            <p
+              class="font-body-sm text-xs text-[#111111] leading-relaxed pl-8 dark:text-[#e8f9f0]"
+            >
+              Menambah hafalan baru tanpa ritme muraja'ah terukur ibarat menuang
+              air ke dalam ember yang bocor. Di bab ini, Ustadz Hanafi
+              membeberkan <strong>Rasio Seimbang Emas (Golden Ratio)</strong>:
+              berapa menit harus dialokasikan untuk memantapkan hafalan kemarin
+              sebelum menyentuh ayat berikutnya.
+            </p>
+          </div>
+
+          <!-- Quote Box Inspiratif -->
+
+          <div
+            class="p-space-md rounded-xl bg-secondary-fixed border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111]"
+          >
+            <div class="flex items-start gap-2">
+              <span class="text-2xl leading-none">“</span>
+
+              <div class="space-y-1">
+                <p
+                  class="font-headline-sm text-xs sm:text-sm uppercase text-[#111111] dark:text-[#f1f8f5] font-extrabold leading-snug"
+                >
+                  Bukan hafalan yang lambat yang membuat kita berhenti,
+                  melainkan pudarnya alasan kita memulai.
+                </p>
+
+                <span
+                  class="font-label-sm text-[10px] uppercase font-bold text-on-surface-variant block dark:text-[#b3c9be]"
+                  >— H. Hanafi Nasution, Lc. Al Hafizh</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+</footer>
+<!-- END FOOTER -->
+  </main>
+
+          <!-- Call to Action Banner Inside Modal -->
+
+          <div
+            class="bg-surface-container-high p-space-md rounded-xl border-[2px] border-[#111111] flex flex-col gap-space-xs text-center dark:bg-[#083324] dark:text-[#e2f4eb] dark:border-[#065f46]"
+          >
+            <span
+              class="font-headline-sm text-xs uppercase font-extrabold text-[#111111] dark:text-[#e8f9f0]"
+              >Tertarik Membaca Kelanjutan 4 Bab Lainnya?</span
+            >
+
+            <p
+              class="font-body-sm text-[11px] text-on-surface-variant leading-tight dark:text-[#93bbaa]"
+            >
+              Dapatkan rumus teknis 4 langkah mutqin, bagan tabel 24 jam, bonus
+              video tutorial, dan bimbingan eksklusif langsung.
+            </p>
+
+            <button
+              class="mt-1 w-full py-2.5 px-3 rounded-lg bg-secondary-container text-[#111111] border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] font-label-md text-xs uppercase tracking-wider font-extrabold flex items-center justify-center gap-1.5 transition-all duration-75 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none cursor-pointer"
+              data-action="orderFromPreview"
+              type="button"
+            >
+              <span>Pesan Buku Lengkap (Rp 149.000)</span>
+
+              <span class="material-symbols-outlined text-[18px]"
+                >arrow_forward</span
+              >
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+
+        <div
+          class="px-space-md py-2.5 bg-surface-container-low border-t-[2px] border-[#111111] flex items-center justify-between shrink-0 dark:bg-[#083324] dark:text-[#e2f4eb] dark:border-[#065f46]"
+        >
+          <span
+            class="font-label-sm text-[11px] text-on-surface-variant font-medium dark:text-[#93bbaa]"
+            >Cuplikan Buku Qumillaila</span
+          >
+
+          <button
+            class="px-3 py-1 bg-surface-container-lowest text-[#111111] font-label-sm text-xs uppercase font-bold rounded border border-[#111111] shadow-[1.5px_1.5px_0px_#111111] active:translate-x-[1px] active:translate-y-[1px] cursor-pointer"
+            data-action="closePreviewModal"
+            type="button"
+          >
+            Tutup Preview
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal & Theme Interactivity Script with Web Audio API Click & Haptics -->
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
