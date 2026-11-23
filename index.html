@@ -18,7 +18,7 @@
       rel="stylesheet"
     />
 
-    <link rel="icon" type="image/png" href="image/depan.jpeg" />
+    <link rel="icon" type="image/png" href="image/depan.jpg" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -87,7 +87,7 @@
             data-action="openOrderModal"
             type="button"
           >
-            Pesan Buku
+            Jadwalkan Pelatihan
           </button>
         </div>
       </div>
@@ -396,7 +396,7 @@
     <img
       alt="Sosialisasi Bersama Tokoh dan Guru Tahfizh"
       class="w-full h-56 desktop:h-64 object-cover object-center"
-      src="image/silaturahmi.png"
+      src="image/silahturahmi.jpg"
     />
     <div class="p-2 bg-surface-container-low border-t-[1.5px] border-[#111111] dark:bg-[#083324] dark:text-[#e2f4eb] dark:border-[#065f46]">
       <p class="font-label-sm text-[10px] uppercase font-bold text-[#111111] leading-tight dark:text-[#e8f9f0]">
@@ -871,53 +871,50 @@
         </section>
 
         <!-- PROFIL PENULIS (AUTHOR SPOTLIGHT) -->
-
-        <section class="flex flex-col">
-          <div class="flex items-center gap-space-xs mb-space-sm">
-            <span
-              class="px-space-sm py-1 bg-secondary-fixed text-[#111111] font-label-md text-label-md uppercase rounded border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] font-bold"
-            >
-              Mengenal Penulis
-            </span>
-          </div>
-
+        <div
+          class="w-full bg-surface-container-lowest rounded-2xl border-[3px] border-[#111111] shadow-[5px_5px_0px_#111111] p-space-lg flex flex-col gap-space-md dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857] desktop:grid desktop:grid-cols-[280px_minmax(0,1fr)] desktop:items-start desktop:gap-x-8 desktop:gap-y-5 desktop:p-10"
+        >
+          <!-- Profil Penulis -->
           <div
-            class="w-full bg-surface-container-lowest rounded-2xl border-[3px] border-[#111111] shadow-[5px_5px_0px_#111111] p-space-lg flex flex-col gap-space-md dark:bg-[#032015] dark:text-[#f1f8f5] dark:border-[#047857] desktop:grid desktop:grid-cols-[auto_1fr] desktop:items-start desktop:gap-x-8 desktop:gap-y-5 desktop:p-10"
+            class="flex items-start gap-space-md desktop:flex-col desktop:items-center desktop:text-center"
           >
-            <div class="flex items-start gap-space-md desktop:row-span-2 desktop:flex-col desktop:items-center desktop:text-center">
-              <div
-                class="w-24 h-24 rounded-2xl border-[2.5px] border-[#111111] shadow-[3px_3px_0px_#111111] overflow-hidden shrink-0 bg-secondary-fixed desktop:w-36 desktop:h-36"
-              >
-                <img
-                  alt="Ustadz H. Hanafi Nasution, Lc. Al Hafizh"
-                  class="w-full h-full object-cover object-top"
-                  src="image/materi.png"
-                />
-              </div>
-
-              <div class="flex flex-col min-w-0 desktop:items-center">
-                <span
-                  class="px-2 py-0.5 bg-tertiary-fixed text-[#111111] font-label-sm text-[10px] uppercase rounded border border-[#111111] self-start mb-1 font-bold"
-                >
-                  Penulis &amp; Pembina
-                </span>
-
-                <h3
-                  class="font-headline-md text-base uppercase text-[#111111] leading-tight font-extrabold truncate dark:text-[#e8f9f0]"
-                >
-                  H. Hanafi Nasution, Lc. Al Hafizh
-                </h3>
-
-                <p
-                  class="font-label-sm text-[11px] uppercase text-[#006b58] font-bold mt-0.5 dark:text-[#6ee7b7]"
-                >
-                  Alumnus Universitas Al-Azhar Kairo
-                </p>
-              </div>
+            <div
+              class="w-24 h-24 rounded-2xl border-[2.5px] border-[#111111] shadow-[3px_3px_0px_#111111] overflow-hidden shrink-0 bg-secondary-fixed desktop:w-36 desktop:h-36"
+            >
+              <img
+                alt="Ustadz H. Hanafi Nasution, Lc. Al Hafizh"
+                class="w-full h-full object-cover object-top"
+                src="image/materi.png"
+              />
             </div>
 
+            <div class="flex flex-col min-w-0 desktop:items-center">
+              <span
+                class="px-2 py-0.5 bg-tertiary-fixed text-[#111111] font-label-sm text-[10px] uppercase rounded border border-[#111111] self-start mb-1 font-bold desktop:self-center"
+              >
+                Penulis &amp; Pembina
+              </span>
+
+              <h3
+                class="font-headline-md text-base uppercase text-[#111111] leading-tight font-extrabold dark:text-[#e8f9f0]"
+              >
+                H. Hanafi Nasution, Lc. Al Hafizh
+              </h3>
+
+              <p
+                class="font-label-sm text-[11px] uppercase text-[#006b58] font-bold mt-0.5 dark:text-[#6ee7b7]"
+              >
+                Alumnus Universitas Al-Azhar Kairo
+              </p>
+            </div>
+          </div>
+
+          <!-- Deskripsi Penulis -->
+          <div class="w-full min-w-0 flex flex-col gap-space-md">
+
             <p
-              class="font-body-md text-sm text-[#111111] leading-normal font-medium text-justify dark:text-[#e8f9f0]"
+              class="w-full font-body-md text-sm text-[#111111] leading-normal font-medium text-justify dark:text-[#e8f9f0]"
+              style="text-align: justify !important;"
             >
               Pemegang Sanad Kubro Qira'at As Sab'ah, Al 'Asyarah, dan As
               Sadzdzah Al-Azhar Cairo Mesir. Berpengalaman bertahun-tahun
@@ -926,7 +923,8 @@
             </p>
 
             <p
-              class="font-body-md text-sm text-[#111111] leading-normal font-medium text-justify dark:text-[#e8f9f0]"
+              class="w-full font-body-md text-sm text-[#111111] leading-normal font-medium text-justify dark:text-[#e8f9f0]"
+              style="text-align: justify !important;"
             >
               Berangkat dari pengalaman pribadi penulis dalam menimba ilmu di
               Al-Azhar Cairo Mesir, khususnya mendalami ilmu-ilmu yang berkaitan
@@ -939,7 +937,8 @@
             </p>
 
             <p
-              class="font-body-md text-sm text-[#111111] leading-normal font-medium text-justify dark:text-[#e8f9f0]"
+              class="w-full font-body-md text-sm text-[#111111] leading-normal font-medium text-justify dark:text-[#e8f9f0]"
+              style="text-align: justify !important;"
             >
               Dalam berbagai pelatihan yang telah dilaksanakan, buku ini dapat
               dipelajari hanya melalui pelatihan satu hari, termasuk praktik
@@ -951,29 +950,31 @@
               dengan kontribusi yang sangat relevan.
             </p>
 
-            <!-- Credential Badges -->
+                    <!-- Credential Badges -->
 
-            <div
-              class="flex flex-wrap gap-2 pt-space-xs border-t-[1.5px] border-[#111111]/20"
-            >
-              <span
-                class="px-2.5 py-1 bg-surface-container rounded-lg border-[1.5px] border-[#111111] shadow-[1.5px_1.5px_0px_#111111] font-label-sm text-[11px] uppercase text-[#111111] font-bold"
-              >
-                🏛️ Al-Azhar Cairo, Mesir
-              </span>
+                    <div
+                      class="flex flex-wrap gap-2 pt-space-xs border-t-[1.5px] border-[#111111]/20"
+                    >
+                      <span
+                        class="px-2.5 py-1 bg-surface-container rounded-lg border-[1.5px] border-[#111111] shadow-[1.5px_1.5px_0px_#111111] font-label-sm text-[11px] uppercase text-[#111111] font-bold"
+                      >
+                        🏛️ Al-Azhar Cairo, Mesir
+                      </span>
 
-              <span
-                class="px-2.5 py-1 bg-surface-container rounded-lg border-[1.5px] border-[#111111] shadow-[1.5px_1.5px_0px_#111111] font-label-sm text-[11px] uppercase text-[#111111] font-bold"
-              >
-                👥 1.000+ Alumni Pelatihan
-              </span>
-            </div>
-          </div>
+                      <span
+                        class="px-2.5 py-1 bg-surface-container rounded-lg border-[1.5px] border-[#111111] shadow-[1.5px_1.5px_0px_#111111] font-label-sm text-[11px] uppercase text-[#111111] font-bold"
+                      >
+                        👥 1.000+ Alumni Pelatihan
+                      </span>
+                    </div>
+                  </div>
+              </div>
+              </div>
         </section>
 
         <!-- TESTIMONIALS & SOCIAL PROOF -->
 
-        <section class="flex flex-col">
+        <section class="flex flex-col w-full min-w-0 px-4 py-3 desktop:px-6 desktop:py-4">
           <div class="flex items-center gap-space-xs mb-space-sm">
             <span
               class="px-space-sm py-1 bg-tertiary-fixed text-[#111111] font-label-md text-label-md uppercase rounded border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] font-bold"
@@ -1087,8 +1088,7 @@
         </section>
 
         <!-- FAQ SECTION -->
-
-        <section class="flex flex-col pb-space-lg" id="faq">
+        <section class="flex flex-col w-full min-w-0 px-4 py-3 desktop:px-6 desktop:py-4 pb-space-lg" id="faq">
           <div class="flex items-center gap-space-xs mb-space-sm">
             <span
               class="px-space-sm py-1 bg-surface-container-high text-[#111111] font-label-md text-label-md uppercase rounded border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111] font-bold"
@@ -1192,7 +1192,7 @@
 
           <span
             class="px-space-sm py-space-xs rounded bg-tertiary-fixed text-[#111111] font-label-sm text-label-sm uppercase border border-[#111111] font-bold"
-            >Sanad Al-Azhar Mesir</span
+            >Pelatihan</span
           >
         </div>
 
@@ -1203,9 +1203,6 @@
 
           <a class="hover:underline" href="#order">Pesan Buku</a>
 
-          <a class="hover:underline" href="https://wa.me/">Kontak CS</a>
-
-          <a class="hover:underline" href="https://intagram/">Kontak CS</a>
         </div>
 
         <!-- Media Sosial -->
@@ -1519,7 +1516,7 @@
                   <p
                     class="font-body-sm text-xs text-on-surface-variant truncate mt-0.5 dark:text-[#93bbaa]"
                   >
-                    Respon Cepat, Tanya Jawab Sanad &amp; Transfer Langsung
+                    Jadwalkan Pelatihan
                   </p>
                 </div>
               </div>
